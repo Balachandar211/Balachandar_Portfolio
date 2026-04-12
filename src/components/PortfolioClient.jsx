@@ -233,10 +233,6 @@ function UrlBar({ method, url, loading, onSend, onToggleSidebar, isIdle }) {
       </button>
       <div className="method-pill method-get">{method}</div>
       <div className="url-display">{url}</div>
-      
-      {isIdle && !loading && (
-        <span className="idle-pointer">👉 Click to fetch</span>
-      )}
 
       <button 
         className={`send-btn ${isIdle && !loading ? "blink" : ""}`} 
@@ -419,7 +415,14 @@ export default function PortfolioClient() {
           <span className="td td-green" />
         </div>
         <span className="titlebar-name">DevClient &nbsp;·&nbsp; v1.0</span>
-        <span className="titlebar-url">balachandar-portfolio.dev</span>
+        <span className="titlebar-url"><a 
+          href="https://balachandar-portfolio.netlify.app/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="titlebar-url"
+        >
+          https://balachandar-portfolio.netlify.app/
+        </a></span>
       </div>
 
       <div className="client-body">
