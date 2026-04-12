@@ -1,0 +1,462 @@
+/* ── reset & base ── */
+.portfolio-client *,
+.portfolio-client *::before,
+.portfolio-client *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-client {
+  --bg-app:       #13161f;
+  --bg-panel:     #0e1017;
+  --bg-sidebar:   #0b0d14;
+  --bg-editor:    #0a0c13;
+  --bg-hover:     #1a1f2e;
+  --bg-active:    #161b2a;
+  --border:       #1e2433;
+  --border-light: #252d3d;
+  --accent:       #6398ff;
+  --accent-dim:   #3a5abf;
+  --text-primary: #e2e8f0;
+  --text-muted:   #6b7280;
+  --text-dim:     #3d4559;
+  --green:        #4ade80;
+  --green-bg:     #0f2a1a;
+  --amber:        #fbbf24;
+  --purple:       #c084fc;
+  --blue-light:   #7dd3fc;
+  --red:          #f87171;
+  --method-get-bg:    #0f1f3a;
+  --method-get-text:  #60a5fa;
+
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  background: var(--bg-app);
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+}
+
+/* ── titlebar ── */
+.titlebar {
+  background: var(--bg-sidebar);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.titlebar-dots { display: flex; gap: 6px; }
+.td {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.td-red    { background: #ff5f57; }
+.td-yellow { background: #febc2e; }
+.td-green  { background: #28c840; }
+.titlebar-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+.titlebar-url {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ── layout ── */
+.client-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  min-height: 0;
+}
+
+/* ── sidebar ── */
+.sidebar {
+  width: 210px;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow-y: auto;
+  padding-bottom: 16px;
+}
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 16px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.sidebar-logo-icon {
+  color: var(--accent);
+  font-size: 10px;
+}
+.sidebar-section-label {
+  padding: 6px 16px 4px;
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.sidebar-collection-name {
+  padding: 4px 16px 6px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.12s;
+  border-left: 2px solid transparent;
+}
+.sidebar-item:hover {
+  background: var(--bg-hover);
+}
+.sidebar-item.active {
+  background: var(--bg-active);
+  border-left-color: var(--accent);
+}
+.sidebar-path {
+  font-size: 11px;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sidebar-item.active .sidebar-path {
+  color: var(--text-primary);
+}
+.sidebar-env {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.env-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+
+/* ── method badges ── */
+.method-badge {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+.method-get {
+  background: var(--method-get-bg);
+  color: var(--method-get-text);
+}
+
+/* ── main panel ── */
+.main-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* ── url bar ── */
+.url-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+.mobile-menu-btn:hover {
+  background: var(--bg-hover);
+}
+
+.method-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+.url-display {
+  flex: 1;
+  background: var(--bg-editor);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.send-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  transition: background 0.15s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  flex-shrink: 0;
+}
+.send-btn:hover:not(:disabled) { background: var(--accent-dim); }
+.send-btn:active:not(:disabled) { transform: scale(0.97); }
+.send-btn:disabled { background: #2a3044; color: var(--text-muted); cursor: not-allowed; }
+.send-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── request tabs ── */
+.req-tabs {
+  display: flex;
+  gap: 0;
+  padding: 0 16px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.req-tab {
+  position: relative;
+  padding: 9px 14px;
+  font-size: 11px;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.12s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.req-tab:hover { color: var(--text-primary); }
+.req-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.tab-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--method-get-text);
+}
+.empty-tab {
+  padding: 20px 16px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.empty-tab-hint {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* ── response panel ── */
+.response-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+.response-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 16px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.response-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+}
+.status-ok   { background: var(--green-bg); color: var(--green); }
+.status-idle { background: #1a1f2e; color: var(--text-muted); }
+.status-err  { background: #2a0f0f; color: var(--red); }
+.response-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.response-tabs-right {
+  margin-left: auto;
+  display: flex;
+  gap: 2px;
+}
+.res-tab-btn {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: inherit;
+}
+.res-tab-btn.active {
+  background: var(--bg-active);
+  color: var(--text-primary);
+}
+
+.response-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 16px;
+  background: var(--bg-editor);
+}
+.response-pre {
+  font-size: 12px;
+  font-family: inherit;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--text-primary);
+}
+.idle-hint, .loading-comment {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.loading-comment { font-style: italic; }
+
+/* ── json syntax colours ── */
+.json-key    { color: var(--blue-light); }
+.json-string { color: var(--green); }
+.json-number { color: var(--amber); }
+.json-bool   { color: var(--purple); }
+.json-null   { color: var(--red); }
+.json-comment{ color: var(--text-dim); font-style: italic; }
+
+/* ── cursor blink ── */
+.cursor-blink {
+  display: inline-block;
+  color: var(--accent);
+  animation: cblink 0.9s step-end infinite;
+  font-weight: 300;
+}
+@keyframes cblink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── scrollbar ── */
+.response-body::-webkit-scrollbar,
+.sidebar::-webkit-scrollbar { width: 4px; }
+.response-body::-webkit-scrollbar-track,
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.response-body::-webkit-scrollbar-thumb,
+.sidebar::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 4px; }
+
+/* ── responsive overrides ── */
+@media (max-width: 640px) {
+  .titlebar-url { display: none; }
+  .mobile-menu-btn { display: block; }
+  
+  .sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 10px 0 20px rgba(0,0,0,0.5);
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  .sidebar-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 40;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+  }
+  .sidebar-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* ── json syntax colours ── */
+.json-key    { color: var(--blue-light); }
+.json-string { color: var(--green); }
+.json-number { color: var(--amber); }
+.json-bool   { color: var(--purple); }
+.json-null   { color: var(--red); }
+.json-comment{ color: var(--text-dim); font-style: italic; }
+
+/* Add this for the newly clickable URLs/Emails */
+.json-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+.json-link:hover {
+  color: #fff;
+}
