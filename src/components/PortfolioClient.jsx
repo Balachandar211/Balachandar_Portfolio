@@ -132,8 +132,6 @@ export const SIDEBAR_ENDPOINTS = [
   { method: "GET", path: "/candidate/awards", active: false, collection: "candidate-api" },
 ];
 
-export const DEFAULT_REQUEST_BODY = `{}`;
-
 /* ─── helpers ─── */
 function buildResponseJson(path) {
   const { candidate, summary, experience, skills, projects, education, awards, meta } = PORTFOLIO_DATA;
@@ -176,7 +174,6 @@ function syntaxHighlight(json) {
             cls = "json-key";
           } else {
             cls = "json-string";
-            // Make URLs and Emails clickable
             const unquoted = match.slice(1, -1);
             if (unquoted.startsWith("http://") || unquoted.startsWith("https://")) {
               return `<span class="${cls}">"<a href="${unquoted}" target="_blank" rel="noopener noreferrer" class="json-link">${unquoted}</a>"</span>`;
@@ -228,7 +225,7 @@ function Sidebar({ endpoints, activeIndex, onSelect, isOpen, onClose }) {
   );
 }
 
-function UrlBar({ method, url, loading, onSend, onToggleSidebar }) {
+function UrlBar({ method, url, loading, onSend, onToggleSidebar, isIdle }) {
   return (
     <div className="url-bar">
       <button className="mobile-menu-btn" onClick={onToggleSidebar} aria-label="Toggle Menu">
@@ -236,7 +233,16 @@ function UrlBar({ method, url, loading, onSend, onToggleSidebar }) {
       </button>
       <div className="method-pill method-get">{method}</div>
       <div className="url-display">{url}</div>
-      <button className="send-btn" onClick={onSend} disabled={loading}>
+      
+      {isIdle && !loading && (
+        <span className="idle-pointer">👉 Click to fetch</span>
+      )}
+
+      <button 
+        className={`send-btn ${isIdle && !loading ? "blink" : ""}`} 
+        onClick={onSend} 
+        disabled={loading}
+      >
         {loading ? <span className="send-spinner" /> : "Send"}
       </button>
     </div>
@@ -315,7 +321,35 @@ export default function PortfolioClient() {
   const [timeMs, setTimeMs] = useState(null);
   const [responseHtml, setResponseHtml] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isIdle, setIsIdle] = useState(false);
+  
   const typeTimerRef = useRef(null);
+  const idleTimerRef = useRef(null);
+
+  const resetIdleTimer = useCallback(() => {
+    setIsIdle(false);
+    if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
+    idleTimerRef.current = setTimeout(() => {
+      setIsIdle(true);
+    }, 2000);
+  }, []);
+
+  useEffect(() => {
+    resetIdleTimer();
+    const handleUserActivity = () => resetIdleTimer();
+
+    // Listen for general interactions to reset the timer
+    window.addEventListener("mousemove", handleUserActivity);
+    window.addEventListener("keydown", handleUserActivity);
+    window.addEventListener("click", handleUserActivity);
+
+    return () => {
+      if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
+      window.removeEventListener("mousemove", handleUserActivity);
+      window.removeEventListener("keydown", handleUserActivity);
+      window.removeEventListener("click", handleUserActivity);
+    };
+  }, [resetIdleTimer]);
 
   const stopTyping = useCallback(() => {
     if (typeTimerRef.current) clearTimeout(typeTimerRef.current);
@@ -344,6 +378,7 @@ export default function PortfolioClient() {
 
   const handleSend = useCallback(() => {
     stopTyping();
+    resetIdleTimer(); // Explicitly reset timer on send
     setLoading(true);
     setStatus(null);
     setTimeMs(null);
@@ -371,7 +406,7 @@ export default function PortfolioClient() {
       const json = JSON.stringify(buildResponseJson(ep.path), null, 2);
       typewriterEffect(json, () => {});
     }, 1300);
-  }, [stopTyping, typewriterEffect, ep.path]);
+  }, [stopTyping, typewriterEffect, ep.path, resetIdleTimer]);
 
   useEffect(() => () => stopTyping(), [stopTyping]);
 
@@ -407,6 +442,7 @@ export default function PortfolioClient() {
             loading={loading}
             onSend={handleSend}
             onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
+            isIdle={isIdle}
           />
 
           <RequestTabs activeTab={activeTab} onTabChange={setActiveTab} />
