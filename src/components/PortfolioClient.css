@@ -31,10 +31,20 @@ html, body {
   --green-bg:     #0f2a1a;
   --amber:        #fbbf24;
   --purple:       #c084fc;
+  --violet:       #a78bfa;
   --blue-light:   #7dd3fc;
   --red:          #f87171;
+  --pink:         #f9a8d4;
   --method-get-bg:    #0f1f3a;
   --method-get-text:  #60a5fa;
+  /* JSON token colours */
+  --json-key-color:    #b57aff;
+  --json-val-color:    #d4bbff;
+  --json-num-color:    #fbbf24;
+  --json-bool-color:   #e879f9;
+  --json-null-color:   #f87171;
+  --json-brace-color:  #6b8cba;
+  --json-comment-color:#3d4559;
 
   font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
   background: var(--bg-app);
@@ -89,7 +99,7 @@ html, body {
 
 /* ── sidebar ── */
 .sidebar {
-  width: 210px;
+  width: 230px;
   background: var(--bg-sidebar);
   border-right: 1px solid var(--border);
   display: flex;
@@ -165,6 +175,52 @@ html, body {
   border-radius: 50%;
   background: var(--green);
   flex-shrink: 0;
+}
+
+/* ── new standout resume buttons ── */
+.sidebar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 16px;
+}
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+.sidebar-btn:active {
+  transform: translateY(1px);
+}
+
+/* PDF Button - Soft Red/Rose */
+.sidebar-btn-pdf {
+  color: #f43f5e;
+  border: 1px solid rgba(244, 63, 94, 0.3);
+}
+.sidebar-btn-pdf:hover {
+  background: rgba(244, 63, 94, 0.1);
+  border-color: rgba(244, 63, 94, 0.6);
+  box-shadow: 0 0 8px rgba(244, 63, 94, 0.2);
+}
+
+/* DOCX Button - Soft Blue */
+.sidebar-btn-docx {
+  color: #60a5fa;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+.sidebar-btn-docx:hover {
+  background: rgba(96, 165, 250, 0.1);
+  border-color: rgba(96, 165, 250, 0.6);
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.2);
 }
 
 /* ── method badges ── */
@@ -362,6 +418,8 @@ html, body {
   color: var(--text-muted);
   cursor: pointer;
   font-family: inherit;
+  background: none;
+  border: none;
 }
 .res-tab-btn.active {
   background: var(--bg-active);
@@ -389,12 +447,28 @@ html, body {
 .loading-comment { font-style: italic; }
 
 /* ── json syntax colours ── */
-.json-key    { color: var(--blue-light); }
-.json-string { color: var(--green); }
-.json-number { color: var(--amber); }
-.json-bool   { color: var(--purple); }
-.json-null   { color: var(--red); }
-.json-comment{ color: var(--text-dim); font-style: italic; }
+.json-key    { color: var(--json-key-color); }
+.json-string { color: var(--json-val-color); }
+.json-number { color: var(--json-num-color); }
+.json-bool   { color: var(--json-bool-color); }
+.json-null   { color: var(--json-null-color); }
+.json-comment{ color: var(--json-comment-color); font-style: italic; }
+.json-brace  { color: var(--json-brace-color); }
+.json-bracket{ color: var(--json-brace-color); }
+.json-punct  { color: var(--text-muted); }
+
+/* ── clickable links ── */
+.json-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: color 0.15s ease;
+  pointer-events: auto;
+}
+.json-link:hover {
+  color: #fff;
+}
 
 /* ── cursor blink ── */
 .cursor-blink {
@@ -449,27 +523,7 @@ html, body {
   }
 }
 
-/* ── json syntax colours ── */
-.json-key    { color: var(--blue-light); }
-.json-string { color: var(--green); }
-.json-number { color: var(--amber); }
-.json-bool   { color: var(--purple); }
-.json-null   { color: var(--red); }
-.json-comment{ color: var(--text-dim); font-style: italic; }
-
-/* Add this for the newly clickable URLs/Emails */
-.json-link {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  cursor: pointer;
-  transition: color 0.15s ease;
-}
-.json-link:hover {
-  color: #fff;
-}
-
-/* ── aggressive idle animation ── */
+/* ── idle pulse animation — violet/purple glow ── */
 @keyframes pulseAndGlow {
   0% {
     transform: scale(1);
@@ -477,9 +531,9 @@ html, body {
     background: var(--accent);
   }
   50% {
-    transform: scale(1.05); /* Physically enlarges the button */
+    transform: scale(1.05);
     box-shadow: 0 0 15px 5px rgba(99, 152, 255, 0.6);
-    background: #8ab4f8; /* Shifts to a much brighter blue */
+    background: #8ab4f8;
     color: #ffffff;
   }
   100% {
@@ -491,17 +545,32 @@ html, body {
 
 .send-btn.blink {
   animation: pulseAndGlow 1.5s infinite ease-in-out;
-  z-index: 10; /* Ensures the scaling doesn't clip under other elements */
+  z-index: 10;
 }
 
-.titlebar-url {
-  margin-left: auto;
-  font-size: 11px;
+.titlebar-url a {
   color: var(--text-muted);
   text-decoration: none;
   transition: color 0.15s ease;
 }
+.titlebar-url a:hover {
+  color: var(--text-primary);
+}
 
-.titlebar-url:hover {
-  color: var(--text-primary); 
+/* ── highlighted resume label ── */
+.sidebar-section-label.resume-label {
+  color: var(--accent); 
+  font-weight: 700;
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Adds a sleek fading line next to the text */
+.sidebar-section-label.resume-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(99, 152, 255, 0.4) 0%, transparent 100%);
 }

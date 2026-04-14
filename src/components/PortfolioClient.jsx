@@ -12,10 +12,18 @@ export const PORTFOLIO_DATA = {
       phone: "+91 79048 80893",
       linkedin: "https://www.linkedin.com/in/balachandar-m-0421a9178/",
       github: "https://github.com/Balachandar211",
+      portfolio: "https://balachandar-portfolio.netlify.app/",
     },
   },
   summary:
     "Module Lead and Backend Engineer with 3.5+ years of experience owning end-to-end delivery of complex backend and actuarial systems in Python and Go. Led a team of 5 engineers, reduced critical defects by 60%, and drove three major platform migrations. Combines deep technical expertise in microservices, Redis, and JWT-based authentication with hands-on leadership — consistently delivering sprint commitments and translating dense technical requirements into measurable business outcomes.",
+  resume: {
+    message: "Resume downloads available in multiple formats.",
+    downloads: {
+      pdf: "/Balachandar_M_Resume.pdf",
+      docx: "/Balachandar_M_Resume.docx"
+    }
+  },
   experience: [
     {
       role: "Module Lead",
@@ -23,11 +31,11 @@ export const PORTFOLIO_DATA = {
       location: "Chennai",
       period: "Jul 2024 – Present",
       highlights: [
-        "Led and mentored a team of 5 engineers; increased code quality by 25% through structured reviews and domain-specific validation standards.",
-        "Owned end-to-end sprint governance for the actuarial module; reduced requirement ambiguity and shortened feedback cycles by 40%.",
-        "Maintained zero team escalations across 3 delivery cycles; prevented ~60% of critical calculation defects from reaching live environments.",
-        "Coached engineers on actuarial logic and performance-tuning; improved team autonomy by 35%.",
-        "Architected 3 major platform migrations — 100% data integrity, zero downtime, 2x improvement in calculation speed.",
+        "Led and mentored a team of 5 engineers in designing and delivering high-fidelity actuarial computation systems; established a culture of precision that increased code quality by 25% through structured reviews and enforced domain-specific validation standards.",
+        "Owned end-to-end project planning and sprint governance for the actuarial module, decomposing dense mathematical specs into testable stories; reduced requirement ambiguity and shortened feedback cycles by 40%.",
+        "Maintained zero team escalations across three delivery cycles by implementing early-warning risk frameworks and pre-production validation gates, preventing an estimated 60% of critical calculation defects from reaching live environments.",
+        "Coached and upskilled engineers on dissecting complex actuarial logic and performance-tuning; improved team autonomy by 35% and reduced senior-level intervention.",
+        "Architected and executed 3 major platform migrations from legacy frameworks to modern architectures; delivered 100% data integrity and zero downtime while achieving a 2x improvement in calculation speed through optimized algorithm design.",
       ],
     },
     {
@@ -36,10 +44,10 @@ export const PORTFOLIO_DATA = {
       location: "Chennai",
       period: "Nov 2023 – Jul 2024",
       highlights: [
-        "Partnered with BAs, QA, and domain experts to translate insurance requirements into specs; increased dev velocity by 30%, reduced mid-sprint changes by 60%.",
-        "Eliminated 30% dead code paths, reduced cyclomatic complexity by 25%, achieved 40% reduction in response times for high-traffic modules.",
-        "Took full ownership of 5 auxiliary modules — increased team delivery capacity by 30%, eliminated single-point-of-failure risks.",
-        "Resolved 20+ latent logical defects; elevated system uptime to 99.9% and improved client satisfaction scores by 90%.",
+        "Partnered with cross-functional teams — including BAs, QA, and domain experts — to translate ambiguous insurance requirements into technical specs; increased development velocity by 30% and reduced mid-sprint requirement changes by 60%.",
+        "Drove measurable improvements in system performance by executing targeted refactoring; eliminated 30% of dead code paths and reduced cyclomatic complexity by 25%, resulting in a 40% reduction in average response times for high-traffic modules.",
+        "Expanded technical ownership by taking full accountability for 5 auxiliary modules — including valuation and charges layers — increasing the team’s total delivery capacity by 30% and eliminating critical single-point-of-failure risks.",
+        "Identified and resolved over 20+ latent logical defects and edge-case failures across the application stack; elevated system uptime to 99.9% and achieved a 90% increase in positive client satisfaction scores regarding output quality.",
       ],
     },
     {
@@ -48,101 +56,114 @@ export const PORTFOLIO_DATA = {
       location: "Chennai",
       period: "Aug 2022 – Nov 2023",
       highlights: [
-        "Optimized insurance policy projection engine — reduced execution time from 20 min to 2–10 min (50% performance gain).",
-        "Independently drove Quotation module lifecycle; delivered weeks ahead of schedule with 100% accuracy against actuarial benchmarks.",
-        "Instituted testing protocols achieving 85% code coverage; reduced post-deployment defects by 45% vs legacy baseline.",
-        "Maintained 100% on-time delivery across 20+ consecutive Agile sprints.",
+        "Engineered intricate business logic for insurance policy projections; optimized the calculation engine to process high-volume of policy data, reducing total execution time from 20 minutes to 2–10 minutes (a 50% performance gain).",
+        "Independently drove the complete lifecycle of the Quotation module; delivered the architecture and data modelling weeks ahead of schedule while ensuring 100% accuracy against dense actuarial mathematical benchmarks.",
+        "Strengthened system reliability by instituting testing protocols and clear debugging workflows; achieved 85% code coverage and reduced post-deployment calculation drift or defects by 45% compared to legacy baselines.",
+        "Accelerated release velocity by hitting 100% of Agile sprint commitments; maintained 100% on-time delivery across 20+ consecutive sprints while rapidly resolving technical blockers for the team.",
       ],
     },
   ],
-  skills: [
-    "Python", "Go", "FastAPI", "Django", "Django REST Framework",
-    "Flask", "Quart", "Gin", "PostgreSQL", "Redis", "RabbitMQ",
-    "Celery", "Docker", "WebSockets", "GraphQL", "REST API",
-    "JWT Authentication", "API Security", "Microservices", "System Design",
-    "CI/CD", "Performance Optimization", "Caching", "Database Indexing",
-    "Ubuntu Linux", "Cloud Deployment", "Linux/VPS Deployment", "Agile",
-    "Actuarial Systems", "Insurance Domain", "Git",
-  ],
+  skills: {
+    languages: ["Python", "Go"],
+    frameworks: ["FastAPI", "Django", "Django REST Framework", "Flask", "Quart", "Gin"],
+    databases: ["PostgreSQL", "Redis"],
+    messaging: ["RabbitMQ", "Celery"],
+    api: ["REST API", "GraphQL", "WebSockets"],
+    security: ["JWT Authentication", "API Security", "DEK Encryption", "Role-Based Access Control (RBAC)"],
+    devops: ["Docker", "Docker Compose", "Nginx", "CI/CD", "Ubuntu Linux", "Linux/VPS Deployment", "Cloud Deployment", "Git"],
+    architecture: ["Microservices", "System Design", "Performance Optimization", "Caching", "Database Indexing"],
+    domain: ["Actuarial Systems", "Insurance Domain", "Technical Business Analytics"],
+    methodology: ["Agile", "Sprint Governance", "Code Review"],
+  },
   projects: [
     {
       name: "ConsTell",
       period: "Feb 2026 – Apr 2026",
-      stack: ["Go", "Python", "React", "PostgreSQL", "Redis", "Docker", "Nginx", "WebSockets", "RabbitMQ", "FastAPI", "Flask"],
+      stack: ["Go", "Python", "React", "PostgreSQL", "Redis", "Docker", "Nginx", "WebSockets", "RabbitMQ", "FastAPI", "Flask", "Quart"],
       description:
-        "Production-deployed 9-service microservices chat platform hosted on Ubuntu Server. Secured with SSL/TLS, custom domain, Nginx reverse proxy. Each service owns an isolated PostgreSQL DB. Full containerisation with Docker Compose CI/CD pipelines.",
+        "A production-deployed, 9-service microservices chat platform hosted on an Ubuntu Server, secured with SSL/TLS, custom domain, and Nginx as reverse proxy. Each service owns an isolated PostgreSQL DB, utilizing Docker for full-stack containerization and Docker Compose for automated CI/CD deployment pipelines.",
       links: {
         live: "https://constell-puce.vercel.app/login",
         demo_user: "SampleUser",
         demo_pass: "Sample@211",
       },
       services: [
-        { name: "API Gateway", repo: "https://github.com/Balachandar211/ConsTell_API_Gateway", desc: "Go/Gin reverse-proxy — JWT validation, CORS, Redis-backed rate limiting across 7 services." },
-        { name: "Auth Service", repo: "https://github.com/Balachandar211/ConsTell_Auth", desc: "FastAPI — full user lifecycle, stateless JWT auth, Pydantic validation, Aerich migrations." },
-        { name: "Profile Service", repo: "https://github.com/Balachandar211/ConsTell_Profile_Service", desc: "Flask/GraphQL — Tortoise ORM, profile picture management, Alembic migrations." },
-        { name: "Chat Service", repo: "https://github.com/Balachandar211/ConsTell-Chat-Service", desc: "Go/Gin — WebSockets, Redis Pub/Sub, DEK-based E2E encryption for DMs and group rooms." },
-        { name: "Chat DB Service", repo: "https://github.com/Balachandar211/ConsTell_Chat_DB_Service", desc: "PostgreSQL-backed — message persistence, room configs, participant metadata, encryption keys." },
-        { name: "Nebula Bot", repo: "https://github.com/Balachandar211/ConsTell-Nebula-Bot", desc: "AI assistant — Llama-3.1-8b-instant via Groq, multi-model fallback chain for resilience." },
-        { name: "Message Broker", repo: "https://github.com/Balachandar211/Message_Broker", desc: "RabbitMQ — async email triggers, cleanup routines, message chunking workflows." },
-        { name: "Mailer API", repo: "https://github.com/Balachandar211/Mail_Service_API", desc: "Quart async email service — background queues for non-blocking high-throughput delivery." },
-        { name: "Frontend", repo: "https://github.com/Balachandar211/ConsTell_Frontend", desc: "React (Vite) — real-time chat, profile management, deep-space design system." },
+        { name: "API Gateway", repo: "https://github.com/Balachandar211/ConsTell_API_Gateway", desc: "Go(Gin) reverse-proxy gateway centralizing routing and security for all 7 backend services. Enforces global middleware for JWT validation, CORS enforcement, and Redis-backed rate limiting." },
+        { name: "Auth Service", repo: "https://github.com/Balachandar211/ConsTell_Auth", desc: "FastAPI RESTful service managing the full user lifecycle with JWT-based stateless auth, Pydantic validation, and Aerich for schema migrations." },
+        { name: "Profile Service", repo: "https://github.com/Balachandar211/ConsTell_Profile_Service", desc: "Flask/GraphQL profile service using Tortoise ORM for user data retrieval and profile picture management. Uses Alembic for schema versioning." },
+        { name: "Chat Service", repo: "https://github.com/Balachandar211/ConsTell-Chat-Service", desc: "Go(Gin) service using WebSockets and Redis Pub/Sub for real-time bidirectional messaging. Provides DEK-based end-to-end encryption for DMs and groups." },
+        { name: "Chat DB Service", repo: "https://github.com/Balachandar211/ConsTell_Chat_DB_Service", desc: "Dedicated PostgreSQL-backed service handling message persistence, room configurations, participant metadata, and encryption keys." },
+        { name: "Nebula Bot", repo: "https://github.com/Balachandar211/ConsTell-Nebula-Bot", desc: "AI assistant powered by Llama-3.1-8b-instant via Groq, delivering context-aware, real-time support through a natural language interface with a multi-model fallback chain." },
+        { name: "Message Broker", repo: "https://github.com/Balachandar211/Message_Broker", desc: "RabbitMQ-driven async task processor handling email triggers, cleanup routines, and message chunking workflows to maintain consistent state." },
+        { name: "Mailer API", repo: "https://github.com/Balachandar211/Mail_Service_API", desc: "Async email service built with Quart, processing mail requests via background queues for non-blocking, high-throughput delivery." },
+        { name: "Frontend", repo: "https://github.com/Balachandar211/ConsTell_Frontend", desc: "Responsive React (Vite) featuring real-time chat, profile management, and a deep-space design system." },
       ],
     },
     {
       name: "Games-Hub",
       period: "Oct 2025 – Dec 2025",
-      stack: ["Python", "Django", "Redis", "PostgreSQL", "Celery", "Docker"],
+      stack: ["Python", "Django", "Django REST Framework", "Redis", "PostgreSQL", "Celery", "Docker"],
       description:
-        "High-performance gaming platform. 20x latency improvement via Redis caching and optimised PostgreSQL indexing. JWT + RBAC auth, comprehensive activity logging, Celery async workers, OpenAPI v3 documentation.",
+        "Engineered a high-performance backend architecture, utilizing Redis caching (per-view & object-level) and optimized PostgreSQL indexing, drastically reducing API latency for concurrent users.",
       links: {
         live: "https://gameshub-test.onrender.com/api/docs/",
         repo: "https://github.com/Balachandar211/GamesHub",
       },
-      services: [],
+      highlights: [
+        "Achieved 20x Performance Gain via Redis caching and optimized PostgreSQL indexing.",
+        "Fortified Security & Logging: Built a production-grade JWT authentication system with Role-Based Access Control (RBAC) and integrated comprehensive user activity logging.",
+        "Resilient Error Handling: Implemented a global exception handling strategy that captures and resolves 99% of runtime errors.",
+        "Scalable Async Architecture: Offloaded resource-intensive tasks to background workers using Celery and Redis, preventing main-thread blocking.",
+        "DevOps & Deployment: Containerized the entire application ecosystem using Docker and deployed via Render for zero-downtime releases.",
+        "Standardized API Ecosystem: Designed secure, well-documented REST APIs using Django Rest Framework and DRF Spectacular (OpenAPI v3).",
+      ],
     },
   ],
   education: {
-    degree: "B.E. Electronics and Communication Engineering",
+    degree: "Bachelors of Engineering Electronics and Communication Engineering",
     institution: "St Peter's College of Engineering and Technology",
     period: "Jul 2018 – Jul 2022",
-    cgpa: "8.89",
+    cgpa: "8.89 / 10.0",
   },
   awards: [
-    "Star of The Quarter",
-    "Star of The Month",
-    "On The Spot Award",
-    "On The Spot Team Award",
-    "Certificate of Recognition",
+    "⭐  Star of The Quarter",
+    "🌟  Star of The Month",
+    "⚡  On The Spot Award",
+    "🤝  On The Spot Team Award",
+    "🏅  Certificate of Recognition",
   ],
   meta: {
     available_for_hire: true,
+    years_of_experience: "3.5+",
+    current_role: "Module Lead @ TCS",
     response_time_ms: 142,
     api_version: "v1",
-    match_score: "97%",
+    match_score: "98%",
+    last_updated: new Date().toISOString().split('T')[0],
   },
 };
 
 export const SIDEBAR_ENDPOINTS = [
-  { method: "GET", path: "/candidate/profile", active: true, collection: "candidate-api" },
-  { method: "GET", path: "/candidate/contact", active: false, collection: "candidate-api" },
-  { method: "GET", path: "/candidate/skills", active: false, collection: "candidate-api" },
-  { method: "GET", path: "/candidate/experience", active: false, collection: "candidate-api" },
-  { method: "GET", path: "/candidate/projects", active: false, collection: "candidate-api" },
-  { method: "GET", path: "/candidate/education", active: false, collection: "candidate-api" },
-  { method: "GET", path: "/candidate/awards", active: false, collection: "candidate-api" },
+  { method: "GET", path: "/candidate/profile",    collection: "candidate-api" },
+  { method: "GET", path: "/candidate/resume",     collection: "candidate-api" },
+  { method: "GET", path: "/candidate/contact",    collection: "candidate-api" },
+  { method: "GET", path: "/candidate/skills",     collection: "candidate-api" },
+  { method: "GET", path: "/candidate/experience", collection: "candidate-api" },
+  { method: "GET", path: "/candidate/projects",   collection: "candidate-api" },
+  { method: "GET", path: "/candidate/education",  collection: "candidate-api" },
+  { method: "GET", path: "/candidate/awards",     collection: "candidate-api" },
 ];
 
 /* ─── helpers ─── */
 function buildResponseJson(path) {
-  const { candidate, summary, experience, skills, projects, education, awards, meta } = PORTFOLIO_DATA;
+  const { candidate, summary, resume, experience, skills, projects, education, awards, meta } = PORTFOLIO_DATA;
   const baseResponse = { status: "200 OK", meta };
 
   switch (path) {
     case "/candidate/profile":
-      return {
-        ...baseResponse,
-        data: { candidate, summary, experience, skills, projects, education, awards }
-      };
+      return { ...baseResponse, data: { candidate, summary, resume, experience, skills, projects, education, awards } };
+    case "/candidate/resume":
+      return { ...baseResponse, data: resume };
     case "/candidate/contact":
       return { ...baseResponse, data: candidate.contact };
     case "/candidate/skills":
@@ -160,35 +181,66 @@ function buildResponseJson(path) {
   }
 }
 
+/* ─── escape helper ─── */
+function esc(s) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+/* ─── syntax highlighter ─────────────────────────────────────────────────── */
 function syntaxHighlight(json) {
-  return json
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(
-      /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
-      (match) => {
-        let cls = "json-number";
-        if (/^"/.test(match)) {
-          if (/:$/.test(match)) {
-            cls = "json-key";
-          } else {
-            cls = "json-string";
-            const unquoted = match.slice(1, -1);
-            if (unquoted.startsWith("http://") || unquoted.startsWith("https://")) {
-              return `<span class="${cls}">"<a href="${unquoted}" target="_blank" rel="noopener noreferrer" class="json-link">${unquoted}</a>"</span>`;
-            } else if (unquoted.includes("@") && !unquoted.includes(" ")) {
-              return `<span class="${cls}">"<a href="mailto:${unquoted}" class="json-link">${unquoted}</a>"</span>`;
-            }
-          }
-        } else if (/true|false/.test(match)) {
-          cls = "json-bool";
-        } else if (/null/.test(match)) {
-          cls = "json-null";
+  const TOKEN = /"(?:[^"\\]|\\.)*"|"(?:[^"\\]|\\.)*$|true|false|null|-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?|[{}\[\],:]/g;
+  let out = "";
+  let last = 0;
+  let m;
+
+  while ((m = TOKEN.exec(json)) !== null) {
+    if (m.index > last) out += esc(json.slice(last, m.index));
+
+    const tok = m[0];
+    const c = tok[0];
+
+    if (c === "{" || c === "}") {
+      out += `<span class="json-brace">${tok}</span>`;
+    } else if (c === "[" || c === "]") {
+      out += `<span class="json-bracket">${tok}</span>`;
+    } else if (c === "," || c === ":") {
+      out += `<span class="json-punct">${tok}</span>`;
+    } else if (tok === "true" || tok === "false") {
+      out += `<span class="json-bool">${tok}</span>`;
+    } else if (tok === "null") {
+      out += `<span class="json-null">${tok}</span>`;
+    } else if (c === "-" || (c >= "0" && c <= "9")) {
+      out += `<span class="json-number">${tok}</span>`;
+    } else if (c === '"') {
+      const rest = json.slice(m.index + tok.length);
+      const isKey = /^\s*:/.test(rest);
+      if (isKey) {
+        out += `<span class="json-key">${esc(tok)}</span>`;
+      } else {
+        let inner = tok.slice(1);
+        let hasClosingQuote = false;
+        if (inner.endsWith('"') && !inner.endsWith('\\"')) {
+          inner = inner.slice(0, -1);
+          hasClosingQuote = true;
         }
-        return `<span class="${cls}">${match}</span>`;
+
+        if (inner.startsWith("http://") || inner.startsWith("https://") || inner.startsWith("/")) {
+          out += `<span class="json-string">"<a href="${inner}" target="_blank" rel="noopener noreferrer" class="json-link">${esc(inner)}</a>${hasClosingQuote ? '"' : ''}</span>`;
+        } else if (/^[^\s@]+@[^\s@]+$/.test(inner)) {
+          out += `<span class="json-string">"<a href="mailto:${inner}" class="json-link">${esc(inner)}</a>${hasClosingQuote ? '"' : ''}</span>`;
+        } else {
+          out += `<span class="json-string">${esc(tok)}</span>`;
+        }
       }
-    );
+    } else {
+      out += esc(tok);
+    }
+
+    last = m.index + tok.length;
+  }
+
+  if (last < json.length) out += esc(json.slice(last));
+  return out;
 }
 
 /* ─── sub-components ─── */
@@ -205,14 +257,9 @@ function Sidebar({ endpoints, activeIndex, onSelect, isOpen, onClose }) {
         <div
           key={i}
           className={`sidebar-item ${i === activeIndex ? "active" : ""}`}
-          onClick={() => {
-            onSelect(i);
-            if (onClose) onClose();
-          }}
+          onClick={() => { onSelect(i); if (onClose) onClose(); }}
         >
-          <span className={`method-badge method-${ep.method.toLowerCase()}`}>
-            {ep.method}
-          </span>
+          <span className={`method-badge method-${ep.method.toLowerCase()}`}>{ep.method}</span>
           <span className="sidebar-path">{ep.path}</span>
         </div>
       ))}
@@ -221,6 +268,25 @@ function Sidebar({ endpoints, activeIndex, onSelect, isOpen, onClose }) {
         <span className="env-dot" />
         Production
       </div>
+      <div className="sidebar-section-label resume-label">Resume</div>
+      <div className="sidebar-actions">
+        <a href="/Balachandar_M_Resume.pdf" download className="sidebar-btn sidebar-btn-pdf">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+             <polyline points="7 10 12 15 17 10"></polyline>
+             <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download PDF
+        </a>
+        <a href="/Balachandar_M_Resume.docx" download className="sidebar-btn sidebar-btn-docx">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+             <polyline points="7 10 12 15 17 10"></polyline>
+             <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download DOCX
+        </a>
+      </div>
     </aside>
   );
 }
@@ -228,15 +294,12 @@ function Sidebar({ endpoints, activeIndex, onSelect, isOpen, onClose }) {
 function UrlBar({ method, url, loading, onSend, onToggleSidebar, isIdle }) {
   return (
     <div className="url-bar">
-      <button className="mobile-menu-btn" onClick={onToggleSidebar} aria-label="Toggle Menu">
-        ☰
-      </button>
+      <button className="mobile-menu-btn" onClick={onToggleSidebar} aria-label="Toggle Menu">☰</button>
       <div className="method-pill method-get">{method}</div>
       <div className="url-display">{url}</div>
-
-      <button 
-        className={`send-btn ${isIdle && !loading ? "blink" : ""}`} 
-        onClick={onSend} 
+      <button
+        className={`send-btn ${isIdle && !loading ? "blink" : ""}`}
+        onClick={onSend}
         disabled={loading}
       >
         {loading ? <span className="send-spinner" /> : "Send"}
@@ -263,15 +326,8 @@ function RequestTabs({ activeTab, onTabChange }) {
   );
 }
 
+/* ─── Response panel — fully managed via dangerouslySetInnerHTML ─── */
 function ResponsePanel({ status, timeMs, responseHtml, loading }) {
-  const bodyRef = useRef(null);
-
-  useEffect(() => {
-    if (bodyRef.current) {
-      bodyRef.current.innerHTML = responseHtml;
-    }
-  }, [responseHtml]);
-
   return (
     <div className="response-panel">
       <div className="response-header">
@@ -287,22 +343,22 @@ function ResponsePanel({ status, timeMs, responseHtml, loading }) {
           <span className="status-badge status-idle">— —</span>
         )}
         <div className="response-tabs-right">
-          <span className="res-tab-btn active">Pretty</span>
-          <span className="res-tab-btn">Raw</span>
+          <button className="res-tab-btn active">Pretty</button>
+          <button className="res-tab-btn">Raw</button>
         </div>
       </div>
       <div className="response-body">
         {loading && (
-          <div className="loading-lines">
-            <span className="loading-comment">// Connecting to candidate API...</span>
-          </div>
+          <span className="loading-comment">// Connecting to candidate API...</span>
         )}
         {!loading && !responseHtml && (
           <span className="idle-hint">// Hit Send to query the candidate API...</span>
         )}
-        {!loading && responseHtml && (
-          <pre ref={bodyRef} className="response-pre" />
-        )}
+        <pre
+          className="response-pre"
+          style={{ display: !loading && responseHtml ? "block" : "none" }}
+          dangerouslySetInnerHTML={{ __html: responseHtml }}
+        />
       </div>
     </div>
   );
@@ -310,61 +366,66 @@ function ResponsePanel({ status, timeMs, responseHtml, loading }) {
 
 /* ─── main component ─── */
 export default function PortfolioClient() {
-  const [activeEndpoint, setActiveEndpoint] = useState(0);
-  const [activeTab, setActiveTab] = useState("Params");
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState(null);
-  const [timeMs, setTimeMs] = useState(null);
-  const [responseHtml, setResponseHtml] = useState("");
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [isIdle, setIsIdle] = useState(false);
-  
+  const [activeEndpoint, setActiveEndpoint]   = useState(0);
+  const [activeTab, setActiveTab]             = useState("Params");
+  const [loading, setLoading]                 = useState(false);
+  const [status, setStatus]                   = useState(null);
+  const [timeMs, setTimeMs]                   = useState(null);
+  const [responseHtml, setResponseHtml]       = useState("");
+  const [sidebarOpen, setSidebarOpen]         = useState(false);
+  const [isIdle, setIsIdle]                   = useState(false);
+
   const typeTimerRef = useRef(null);
+  const loadingTimersRef = useRef([]);
   const idleTimerRef = useRef(null);
 
   const resetIdleTimer = useCallback(() => {
     setIsIdle(false);
     if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
-    idleTimerRef.current = setTimeout(() => {
-      setIsIdle(true);
-    }, 2000);
+    idleTimerRef.current = setTimeout(() => setIsIdle(true), 2000);
   }, []);
 
   useEffect(() => {
     resetIdleTimer();
-    const handleUserActivity = () => resetIdleTimer();
-
-    // Listen for general interactions to reset the timer
-    window.addEventListener("mousemove", handleUserActivity);
-    window.addEventListener("keydown", handleUserActivity);
-    window.addEventListener("click", handleUserActivity);
-
+    const handle = () => resetIdleTimer();
+    window.addEventListener("mousemove", handle);
+    window.addEventListener("keydown", handle);
+    window.addEventListener("click", handle);
     return () => {
       if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
-      window.removeEventListener("mousemove", handleUserActivity);
-      window.removeEventListener("keydown", handleUserActivity);
-      window.removeEventListener("click", handleUserActivity);
+      window.removeEventListener("mousemove", handle);
+      window.removeEventListener("keydown", handle);
+      window.removeEventListener("click", handle);
     };
   }, [resetIdleTimer]);
 
   const stopTyping = useCallback(() => {
     if (typeTimerRef.current) clearTimeout(typeTimerRef.current);
+    loadingTimersRef.current.forEach(clearTimeout);
+    loadingTimersRef.current = [];
   }, []);
 
-  const typewriterEffect = useCallback((fullText, onDone) => {
-    const highlighted = syntaxHighlight(fullText);
-    let i = 0;
+  // Clear previous response when switching endpoints for a cleaner UI
+  useEffect(() => {
+    setResponseHtml("");
+    setStatus(null);
+    setTimeMs(null);
+    stopTyping();
+  }, [activeEndpoint, stopTyping]);
+
+  const typewriterEffect = useCallback((fullText) => {
     const chars = fullText.split("");
+    let i = 0;
 
     function step() {
-      i = Math.min(i + 6, chars.length);
+      i = Math.min(i + 16, chars.length); // slightly larger chunk for smoother rendering
       const partial = chars.slice(0, i).join("");
-      setResponseHtml(syntaxHighlight(partial) + (i < chars.length ? '<span class="cursor-blink">|</span>' : ""));
+
       if (i < chars.length) {
-        typeTimerRef.current = setTimeout(step, 10);
+        setResponseHtml(syntaxHighlight(partial) + '<span class="cursor-blink">|</span>');
+        typeTimerRef.current = setTimeout(step, 16); // roughly 60fps
       } else {
-        setResponseHtml(highlighted);
-        onDone();
+        setResponseHtml(syntaxHighlight(fullText));
       }
     }
     step();
@@ -374,7 +435,7 @@ export default function PortfolioClient() {
 
   const handleSend = useCallback(() => {
     stopTyping();
-    resetIdleTimer(); // Explicitly reset timer on send
+    resetIdleTimer();
     setLoading(true);
     setStatus(null);
     setTimeMs(null);
@@ -382,26 +443,21 @@ export default function PortfolioClient() {
 
     const start = Date.now();
 
-    // Stage 1 — connecting
-    typeTimerRef.current = setTimeout(() => {
+    loadingTimersRef.current.push(setTimeout(() => {
       setResponseHtml('<span class="json-comment">// Authenticating request...</span>');
-    }, 350);
+    }, 350));
 
-    // Stage 2 — fetching
-    typeTimerRef.current = setTimeout(() => {
+    loadingTimersRef.current.push(setTimeout(() => {
       setResponseHtml('<span class="json-comment">// Fetching candidate data...</span>');
-    }, 800);
+    }, 800));
 
-    // Stage 3 — respond
-    typeTimerRef.current = setTimeout(() => {
+    loadingTimersRef.current.push(setTimeout(() => {
       setLoading(false);
-      const elapsed = Date.now() - start;
       setStatus("200 OK");
-      setTimeMs(elapsed);
-      
+      setTimeMs(Date.now() - start);
       const json = JSON.stringify(buildResponseJson(ep.path), null, 2);
-      typewriterEffect(json, () => {});
-    }, 1300);
+      typewriterEffect(json);
+    }, 1300));
   }, [stopTyping, typewriterEffect, ep.path, resetIdleTimer]);
 
   useEffect(() => () => stopTyping(), [stopTyping]);
@@ -415,14 +471,11 @@ export default function PortfolioClient() {
           <span className="td td-green" />
         </div>
         <span className="titlebar-name">DevClient &nbsp;·&nbsp; v1.0</span>
-        <span className="titlebar-url"><a 
-          href="https://balachandar-portfolio.netlify.app/" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="titlebar-url"
-        >
-          https://balachandar-portfolio.netlify.app/
-        </a></span>
+        <span className="titlebar-url">
+          <a href="https://balachandar-portfolio.netlify.app/" target="_blank" rel="noopener noreferrer">
+            https://balachandar-portfolio.netlify.app/
+          </a>
+        </span>
       </div>
 
       <div className="client-body">
@@ -450,19 +503,15 @@ export default function PortfolioClient() {
 
           <RequestTabs activeTab={activeTab} onTabChange={setActiveTab} />
 
-          {activeTab === "Body" ? (
-             <div className="empty-tab">
-               <span className="empty-tab-hint">GET requests typically do not require a payload body.</span>
-             </div>
-          ) : activeTab === "Params" ? (
-            <div className="empty-tab">
-               <span className="empty-tab-hint">Query parameters: None required for this endpoint.</span>
-             </div>
-          ) : (
-            <div className="empty-tab">
-              <span className="empty-tab-hint">No {activeTab.toLowerCase()} configured for this request.</span>
-            </div>
-          )}
+          <div className="empty-tab">
+            <span className="empty-tab-hint">
+              {activeTab === "Body"
+                ? "GET requests typically do not require a payload body."
+                : activeTab === "Params"
+                ? "Query parameters: None required for this endpoint."
+                : `No ${activeTab.toLowerCase()} configured for this request.`}
+            </span>
+          </div>
 
           <ResponsePanel
             status={status}
