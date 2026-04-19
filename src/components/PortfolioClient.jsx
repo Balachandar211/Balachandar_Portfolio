@@ -29,7 +29,7 @@ export const PORTFOLIO_DATA = {
       role: "Module Lead",
       company: "Tata Consultancy Services",
       location: "Chennai",
-      period: "Jul 2024 – Present",
+      period: "July 2025 – Present",
       highlights: [
         "Led and mentored a team of 5 engineers in designing and delivering high-fidelity actuarial computation systems; established a culture of precision that increased code quality by 25% through structured reviews and enforced domain-specific validation standards.",
         "Owned end-to-end project planning and sprint governance for the actuarial module, decomposing dense mathematical specs into testable stories; reduced requirement ambiguity and shortened feedback cycles by 40%.",
@@ -42,7 +42,7 @@ export const PORTFOLIO_DATA = {
       role: "Systems Engineer",
       company: "Tata Consultancy Services",
       location: "Chennai",
-      period: "Nov 2023 – Jul 2024",
+      period: "Nov 2023 – July 2025",
       highlights: [
         "Partnered with cross-functional teams — including BAs, QA, and domain experts — to translate ambiguous insurance requirements into technical specs; increased development velocity by 30% and reduced mid-sprint requirement changes by 60%.",
         "Drove measurable improvements in system performance by executing targeted refactoring; eliminated 30% of dead code paths and reduced cyclomatic complexity by 25%, resulting in a 40% reduction in average response times for high-traffic modules.",
