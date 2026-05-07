@@ -5,7 +5,7 @@ import "./PortfolioClient.css";
 export const PORTFOLIO_DATA = {
   candidate: {
     name: "Balachandar M",
-    title: "Senior Backend Developer @ Tata Consultancy Services",
+    title: "Senior Backend Developer",
     location: "Chennai, Tamil Nadu, India",
     contact: {
       email: "balachandarspl@gmail.com",
