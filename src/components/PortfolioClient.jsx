@@ -101,7 +101,7 @@ export const PORTFOLIO_DATA = {
       ],
     },
     {
-      name: "Games-Hub",
+      name: "GamesHub",
       period: "Oct 2025 – Dec 2025",
       stack: ["Python", "Django", "Django REST Framework", "Redis", "PostgreSQL", "Celery", "Docker"],
       description:
