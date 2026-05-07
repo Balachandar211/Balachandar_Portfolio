@@ -5,7 +5,7 @@ import "./PortfolioClient.css";
 export const PORTFOLIO_DATA = {
   candidate: {
     name: "Balachandar M",
-    title: "Module Lead | Backend Engineer",
+    title: "Senior Backend Developer @ Tata Consultancy Services",
     location: "Chennai, Tamil Nadu, India",
     contact: {
       email: "balachandarspl@gmail.com",
@@ -16,7 +16,7 @@ export const PORTFOLIO_DATA = {
     },
   },
   summary:
-    "Module Lead and Backend Engineer with 3.5+ years of experience owning end-to-end delivery of complex backend and actuarial systems in Python and Go. Led a team of 5 engineers, reduced critical defects by 60%, and drove three major platform migrations. Combines deep technical expertise in microservices, Redis, and JWT-based authentication with hands-on leadership — consistently delivering sprint commitments and translating dense technical requirements into measurable business outcomes.",
+    "Senior Backend Developer with 3.5+ years of experience owning the end-to-end architecture and delivery of complex computation and backend systems in Python and Go. Drove three major platform migrations and elevated overall system reliability, successfully reducing critical defects by 60%. Combines deep technical expertise in microservices, Redis, and JWT-based authentication with strong technical mentorship, consistently translating dense technical requirements into scalable, measurable business outcomes.",
   resume: {
     message: "Resume downloads available in multiple formats.",
     downloads: {
@@ -26,40 +26,40 @@ export const PORTFOLIO_DATA = {
   },
   experience: [
     {
-      role: "Module Lead",
+      role: "Senior Backend Developer",
       company: "Tata Consultancy Services",
       location: "Chennai",
-      period: "July 2025 – Present",
+      period: "July 2025 - Present",
       highlights: [
-        "Led and mentored a team of 5 engineers in designing and delivering high-fidelity actuarial computation systems; established a culture of precision that increased code quality by 25% through structured reviews and enforced domain-specific validation standards.",
-        "Owned end-to-end project planning and sprint governance for the actuarial module, decomposing dense mathematical specs into testable stories; reduced requirement ambiguity and shortened feedback cycles by 40%.",
-        "Maintained zero team escalations across three delivery cycles by implementing early-warning risk frameworks and pre-production validation gates, preventing an estimated 60% of critical calculation defects from reaching live environments.",
-        "Coached and upskilled engineers on dissecting complex actuarial logic and performance-tuning; improved team autonomy by 35% and reduced senior-level intervention.",
-        "Architected and executed 3 major platform migrations from legacy frameworks to modern architectures; delivered 100% data integrity and zero downtime while achieving a 2x improvement in calculation speed through optimized algorithm design.",
+        "Spearheaded the technical delivery of high-fidelity financial computation engines, mentoring a team of 5 developers through rigorous code reviews that reduced accumulated technical debt by 30% and ensured the algorithmic accuracy of complex data models.",
+        "Owned technical scoping and system architecture for the calculation module, collaborating with domain experts to translate dense mathematical requirements into scalable backend sprints, which accelerated new feature time-to-market by 25%.",
+        "Ensured highly reliable release cycles and consistent on-time delivery by implementing automated validation gates and proactive risk frameworks, achieving zero production incidents across 4 major release cycles and cutting regression testing time by 40%.",
+        "Acted as the primary technical mentor, guiding the engineering team through advanced solution design and performance-tuning techniques, which empowered the team to resolve 80% of complex calculation bottlenecks independently without senior intervention.",
+        "Architected and executed 3 major migrations from legacy calculation frameworks to modern microservice architectures, guaranteeing 100% data integrity for millions of records, zero deployment downtime, and a 3x improvement in cross-service data retrieval speeds."
       ],
     },
     {
       role: "Systems Engineer",
       company: "Tata Consultancy Services",
       location: "Chennai",
-      period: "Nov 2023 – July 2025",
+      period: "Nov 2023 - July 2025",
       highlights: [
-        "Partnered with cross-functional teams — including BAs, QA, and domain experts — to translate ambiguous insurance requirements into technical specs; increased development velocity by 30% and reduced mid-sprint requirement changes by 60%.",
+        "Partnered with cross-functional teams—including Business Analysts (BAs) and Quality Assurance (QA), and domain experts—to translate ambiguous insurance requirements into technical specs; increased development velocity by 30% and reduced mid-sprint requirement changes by 60%.",
         "Drove measurable improvements in system performance by executing targeted refactoring; eliminated 30% of dead code paths and reduced cyclomatic complexity by 25%, resulting in a 40% reduction in average response times for high-traffic modules.",
-        "Expanded technical ownership by taking full accountability for 5 auxiliary modules — including valuation and charges layers — increasing the team’s total delivery capacity by 30% and eliminating critical single-point-of-failure risks.",
-        "Identified and resolved over 20+ latent logical defects and edge-case failures across the application stack; elevated system uptime to 99.9% and achieved a 90% increase in positive client satisfaction scores regarding output quality.",
+        "Expanded technical ownership by taking full accountability for 5 auxiliary modules—including valuation and charges layers—increasing the team’s total delivery capacity by 30% and eliminating critical single-point-of-failure risks.",
+        "Identified and resolved over 20+ latent logical defects and edge-case failures across the application stack; elevated system uptime to 99.9% and achieved a 90% increase in positive client satisfaction scores regarding output quality."
       ],
     },
     {
       role: "Assistant Systems Engineer",
       company: "Tata Consultancy Services",
       location: "Chennai",
-      period: "Aug 2022 – Nov 2023",
+      period: "Aug 2022 - Nov 2023",
       highlights: [
         "Engineered intricate business logic for insurance policy projections; optimized the calculation engine to process high-volume of policy data, reducing total execution time from 20 minutes to 2–10 minutes (a 50% performance gain).",
         "Independently drove the complete lifecycle of the Quotation module; delivered the architecture and data modelling weeks ahead of schedule while ensuring 100% accuracy against dense actuarial mathematical benchmarks.",
         "Strengthened system reliability by instituting testing protocols and clear debugging workflows; achieved 85% code coverage and reduced post-deployment calculation drift or defects by 45% compared to legacy baselines.",
-        "Accelerated release velocity by hitting 100% of Agile sprint commitments; maintained 100% on-time delivery across 20+ consecutive sprints while rapidly resolving technical blockers for the team.",
+        "Accelerated release velocity by hitting 100% of Agile sprint commitments; maintained 100% on-time delivery across 20+ consecutive sprints while rapidly resolving technical blockers for the team."
       ],
     },
   ],
@@ -68,6 +68,7 @@ export const PORTFOLIO_DATA = {
     frameworks: ["FastAPI", "Django", "Django REST Framework", "Flask", "Quart", "Gin"],
     databases: ["PostgreSQL", "Redis"],
     messaging: ["RabbitMQ", "Celery"],
+    ai: ["Generative AI", "Prompt Engineering"],
     api: ["REST API", "GraphQL", "WebSockets"],
     security: ["JWT Authentication", "API Security", "DEK Encryption", "Role-Based Access Control (RBAC)"],
     devops: ["Docker", "Docker Compose", "Nginx", "CI/CD", "Ubuntu Linux", "Linux/VPS Deployment", "Cloud Deployment", "Git"],
@@ -135,7 +136,7 @@ export const PORTFOLIO_DATA = {
   meta: {
     available_for_hire: true,
     years_of_experience: "3.5+",
-    current_role: "Module Lead @ TCS",
+    current_role: "Senior Backend Developer @ TCS",
     response_time_ms: 142,
     api_version: "v1",
     match_score: "98%",
